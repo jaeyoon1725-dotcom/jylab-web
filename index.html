@@ -35,6 +35,8 @@ nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.82);backdrop-filt
   radial-gradient(ellipse 50% 40% at 80% 10%,rgba(34,211,238,.10),transparent)}
 .hero .tag{display:inline-block;font-size:.85rem;color:var(--acc);border:1px solid rgba(74,222,128,.35);border-radius:99px;padding:6px 16px;margin-bottom:28px;background:rgba(74,222,128,.06)}
 .hero h1{font-size:clamp(2.2rem,5.4vw,3.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.hero h1 .lead{color:var(--tx2);font-size:clamp(1.3rem,3vw,1.9rem);font-weight:700;display:block;margin-bottom:14px}
+.hero h1 .big{display:block;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{margin:24px auto 0;max-width:560px;color:var(--tx2);font-size:1.08rem}
 .hero .cta{display:inline-block;margin-top:40px;background:var(--grad);color:#06210f;font-weight:700;padding:15px 36px;border-radius:12px;font-size:1rem;transition:.2s;box-shadow:0 8px 32px rgba(74,222,128,.25)}
@@ -91,7 +93,7 @@ footer a:hover{color:var(--tx)}
 
 <header class="hero"><div class="wrap">
   <div class="tag">AI 헬스코치 — 비공개 베타 준비 중</div>
-  <h1>데이터는 이미 충분합니다.<br><span>해석해주는 사람</span>이 없었을 뿐.</h1>
+  <h1><span class="lead">데이터는 이미 충분합니다. 없었던 건</span><span class="big">해석해주는 사람.</span></h1>
   <p>워치가 잰 수면, 헬스장에서 잰 인바디, 오늘 먹은 한 끼.<br>흩어진 건강 데이터를 AI가 모아 매일 아침 <b>한 줄의 코칭</b>으로 보내드립니다.</p>
   <a class="cta" href="#products">베타 소식 받기</a>
   <div class="sub">출시 알림은 곧 오픈채팅으로 안내됩니다</div>

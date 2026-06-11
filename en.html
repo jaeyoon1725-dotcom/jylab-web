@@ -34,6 +34,8 @@ nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.82);backdrop-filt
   radial-gradient(ellipse 50% 40% at 80% 10%,rgba(34,211,238,.10),transparent)}
 .hero .tag{display:inline-block;font-size:.85rem;color:var(--acc);border:1px solid rgba(74,222,128,.35);border-radius:99px;padding:6px 16px;margin-bottom:28px;background:rgba(74,222,128,.06)}
 .hero h1{font-size:clamp(2.2rem,5.4vw,3.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.hero h1 .lead{color:var(--tx2);font-size:clamp(1.3rem,3vw,1.9rem);font-weight:700;display:block;margin-bottom:14px}
+.hero h1 .big{display:block;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{margin:24px auto 0;max-width:560px;color:var(--tx2);font-size:1.08rem}
 .hero .cta{display:inline-block;margin-top:40px;background:var(--grad);color:#06210f;font-weight:700;padding:15px 36px;border-radius:12px;font-size:1rem;transition:.2s;box-shadow:0 8px 32px rgba(74,222,128,.25)}
@@ -90,7 +92,7 @@ footer a:hover{color:var(--tx)}
 
 <header class="hero"><div class="wrap">
   <div class="tag">AI Health Coach — private beta in preparation</div>
-  <h1>You already have the data.<br>What was missing is <span>someone to read it</span>.</h1>
+  <h1><span class="lead">You already have the data.<br>What was missing is</span><span class="big">someone to read it.</span></h1>
   <p>Sleep from your watch, body composition from the gym, today's meals.<br>Our AI gathers your scattered health data and sends <b>one line of coaching</b> every morning.</p>
   <a class="cta" href="#products">Get beta updates</a>
   <div class="sub">Launch notifications coming soon</div>
