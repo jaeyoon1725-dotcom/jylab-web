@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JYLAB — AI가 일하는 제품 스튜디오</title>
+<meta name="description" content="제이와이랩(JYLAB)은 AI와 자동화로 일상의 문제를 푸는 1인 제품 스튜디오입니다. 첫 제품: 가민·갤럭시워치·인바디·식단을 하나로 묶는 AI 헬스코치.">
+<meta property="og:title" content="JYLAB — AI가 일하는 제품 스튜디오">
+<meta property="og:description" content="흩어진 건강 데이터를 매일 아침 한 줄의 코칭으로. AI 헬스코치 베타 준비 중.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --bg:#0b0d12; --bg2:#11141c; --card:#161a24; --line:#232938;
+  --tx:#e8ebf2; --tx2:#9aa3b5; --tx3:#5d6679;
+  --acc:#4ade80; --acc2:#22d3ee; --grad:linear-gradient(135deg,#4ade80 0%,#22d3ee 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:1.25rem;font-weight:800;letter-spacing:.02em}
+.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav-links{display:flex;gap:28px;font-size:.92rem;color:var(--tx2)}
+.nav-links a:hover{color:var(--tx)}
+
+.hero{padding:110px 0 90px;text-align:center;background:
+  radial-gradient(ellipse 60% 50% at 50% -10%,rgba(74,222,128,.14),transparent),
+  radial-gradient(ellipse 50% 40% at 80% 10%,rgba(34,211,238,.10),transparent)}
+.hero .tag{display:inline-block;font-size:.85rem;color:var(--acc);border:1px solid rgba(74,222,128,.35);border-radius:99px;padding:6px 16px;margin-bottom:28px;background:rgba(74,222,128,.06)}
+.hero h1{font-size:clamp(2.2rem,5.4vw,3.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin:24px auto 0;max-width:560px;color:var(--tx2);font-size:1.08rem}
+.hero .cta{display:inline-block;margin-top:40px;background:var(--grad);color:#06210f;font-weight:700;padding:15px 36px;border-radius:12px;font-size:1rem;transition:.2s;box-shadow:0 8px 32px rgba(74,222,128,.25)}
+.hero .cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(74,222,128,.35)}
+.hero .sub{margin-top:14px;font-size:.85rem;color:var(--tx3)}
+
+section{padding:88px 0}
+.sec-tag{font-size:.85rem;font-weight:700;color:var(--acc);letter-spacing:.08em;text-transform:uppercase}
+h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:800;letter-spacing:-.01em;margin-top:10px}
+.sec-desc{color:var(--tx2);margin-top:14px;max-width:620px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:44px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px;position:relative;overflow:hidden;transition:.2s}
+.card:hover{border-color:#2e3850;transform:translateY(-3px)}
+.card .badge{position:absolute;top:24px;right:24px;font-size:.74rem;font-weight:700;padding:4px 12px;border-radius:99px}
+.badge.beta{background:rgba(74,222,128,.12);color:var(--acc);border:1px solid rgba(74,222,128,.3)}
+.badge.soon{background:rgba(154,163,181,.1);color:var(--tx2);border:1px solid var(--line)}
+.card .icon{font-size:2rem;margin-bottom:18px}
+.card h3{font-size:1.25rem;font-weight:700}
+.card p{color:var(--tx2);font-size:.95rem;margin-top:10px}
+.card ul{margin-top:16px;list-style:none}
+.card li{font-size:.9rem;color:var(--tx2);padding-left:22px;position:relative;margin-top:7px}
+.card li::before{content:"✓";position:absolute;left:0;color:var(--acc);font-weight:700}
+
+.flow{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.step{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:24px}
+.step .n{font-size:.8rem;font-weight:800;color:var(--acc2)}
+.step h4{margin-top:8px;font-size:1.02rem}
+.step p{font-size:.88rem;color:var(--tx2);margin-top:6px}
+
+.about{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:36px}
+.about-grid p{color:var(--tx2);font-size:.97rem}
+.about-grid p+p{margin-top:14px}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr}}
+
+footer{padding:48px 0 64px;border-top:1px solid var(--line);font-size:.85rem;color:var(--tx3)}
+.foot-in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer a{color:var(--tx2)}
+footer a:hover{color:var(--tx)}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav-in">
+  <div class="logo"><b>JY</b>LAB</div>
+  <div class="nav-links">
+    <a href="#products">제품</a>
+    <a href="#how">작동 방식</a>
+    <a href="#about">회사</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="tag">AI 헬스코치 — 비공개 베타 준비 중</div>
+  <h1>데이터는 이미 충분합니다.<br><span>해석해주는 사람</span>이 없었을 뿐.</h1>
+  <p>워치가 잰 수면, 헬스장에서 잰 인바디, 오늘 먹은 한 끼.<br>흩어진 건강 데이터를 AI가 모아 매일 아침 <b>한 줄의 코칭</b>으로 보내드립니다.</p>
+  <a class="cta" href="#products">베타 소식 받기</a>
+  <div class="sub">출시 알림은 곧 오픈채팅으로 안내됩니다</div>
+</div></header>
+
+<section id="products"><div class="wrap">
+  <div class="sec-tag">Products</div>
+  <h2>만들고 있는 것</h2>
+  <p class="sec-desc">JYLAB은 "기록은 자동, 해석은 AI, 행동은 당신"이라는 원칙으로 일상의 도구를 만듭니다.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="badge beta">BETA 준비 중</div>
+      <div class="icon">🏃</div>
+      <h3>AI 헬스코치</h3>
+      <p>가민·갤럭시워치·인바디·식단 사진을 하나로 묶는 통합 건강 코칭. 카카오톡으로 시작합니다.</p>
+      <ul>
+        <li>워치 데이터 자동 수집 — 손가락 0번</li>
+        <li>인바디 사진 한 장으로 체성분 추적</li>
+        <li>"체중 +2kg, 근육 +1.4kg — 잘 가고 있어요" 식의 교차 해석</li>
+        <li>매일 아침 맞춤 브리핑 + 주간 리포트</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="badge soon">COMING SOON</div>
+      <div class="icon">💧</div>
+      <h3>AquaPad</h3>
+      <p>책상 위의 수분 습관을 바꾸는 스마트 코스터. AI 코치와 연동됩니다.</p>
+      <ul>
+        <li>음수량 자동 기록</li>
+        <li>헬스코치 데이터와 통합</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="sec-tag">How it works</div>
+  <h2>AI 헬스코치, 이렇게 작동합니다</h2>
+  <div class="flow">
+    <div class="step"><div class="n">STEP 1</div><h4>연결</h4><p>가민·갤럭시워치 계정을 한 번 연결하면 운동·수면·심박이 자동으로 모입니다.</p></div>
+    <div class="step"><div class="n">STEP 2</div><h4>사진 두 장</h4><p>밥 먹을 때 한 장, 인바디 잴 때 한 장. 나머지 기록은 전부 자동입니다.</p></div>
+    <div class="step"><div class="n">STEP 3</div><h4>교차 해석</h4><p>체중·근육·수면·식단을 함께 읽습니다. 숫자 하나로 겁주지 않습니다.</p></div>
+    <div class="step"><div class="n">STEP 4</div><h4>아침 한 줄</h4><p>매일 아침 카카오톡으로. "오늘 뭘 하면 되는지"만 정확하게.</p></div>
+  </div>
+</div></section>
+
+<section id="about" class="about"><div class="wrap">
+  <div class="sec-tag">About</div>
+  <h2>제이와이랩</h2>
+  <div class="about-grid">
+    <div>
+      <p>JYLAB은 AI와 자동화로 일상의 문제를 푸는 1인 제품 스튜디오입니다. 직접 쓰려고 만든 도구가 충분히 좋아졌을 때, 제품으로 내놓습니다.</p>
+      <p>AI 헬스코치도 그렇게 시작했습니다. 매일 아침 러닝과 인바디와 식단 사이에서 길을 잃던 한 사람의 기록 자동화가, 같은 문제를 가진 모두의 코치가 되는 중입니다.</p>
+    </div>
+    <div>
+      <p><b style="color:var(--tx)">원칙</b><br>기록은 자동으로, 해석은 데이터로, 결론은 한 줄로. 건강 데이터는 민감정보로 취급하며 수집 최소화·목적 제한 원칙을 지킵니다.</p>
+      <p><b style="color:var(--tx)">연락처</b><br>제휴·문의: <a href="mailto:jaeyoon1725@gmail.com" style="color:var(--acc)">jaeyoon1725@gmail.com</a></p>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap foot-in">
+  <div>
+    © 2026 제이와이랩(JYLAB). All rights reserved.<br>
+    <span style="font-size:.8rem">사업자등록번호: 발급 후 기재 예정</span>
+  </div>
+  <div><a href="privacy.html">개인정보처리방침</a></div>
+</div></footer>
+
+</body>
+</html>
