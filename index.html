@@ -78,6 +78,15 @@ footer{padding:48px 0 64px;border-top:1px solid var(--line);font-size:.85rem;col
 .foot-in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 footer a{color:var(--tx2)}
 footer a:hover{color:var(--tx)}
+@media(max-width:768px){.nav-links{gap:14px;font-size:.85rem}}
+@media(max-width:600px){
+  .nav-in{height:auto;flex-direction:column;align-items:flex-start;gap:10px;padding-top:14px;padding-bottom:14px}
+  .nav-links{flex-direction:column;gap:8px;width:100%}
+  .hero{padding:60px 0 50px}
+  figure{max-width:100%}
+  figure img{max-width:100%;width:100%!important;height:auto}
+  .foot-in{flex-direction:column}
+}
 </style>
 </head>
 <body>
