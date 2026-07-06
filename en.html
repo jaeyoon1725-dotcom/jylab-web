@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JYLAB — An AI-powered product studio</title>
-<meta name="description" content="JYLAB is a one-person product studio in South Korea building AI-powered tools. First product: an AI health coach that unifies Garmin, Galaxy Watch, InBody and meal photos.">
+<meta name="description" content="JYLAB is a product studio building practical AI products and field automation tools, including Self PT, AquaPad and Weekly Happiness.">
 <meta property="og:title" content="JYLAB — An AI-powered product studio">
-<meta property="og:description" content="Scattered health data, turned into one line of coaching every morning. AI Health Coach beta in preparation.">
+<meta property="og:description" content="Practical AI products for health, education and field operations, including Self PT, AquaPad and Weekly Happiness.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -38,8 +38,11 @@ nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.82);backdrop-filt
 .hero h1 .big{display:block;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{margin:24px auto 0;max-width:560px;color:var(--tx2);font-size:1.08rem}
-.hero .cta{display:inline-block;margin-top:40px;background:var(--grad);color:#06210f;font-weight:700;padding:15px 36px;border-radius:12px;font-size:1rem;transition:.2s;box-shadow:0 8px 32px rgba(74,222,128,.25)}
-.hero .cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(74,222,128,.35)}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:40px}
+.cta{display:inline-block;background:var(--grad);color:#06210f;font-weight:700;padding:15px 28px;border-radius:12px;font-size:1rem;transition:.2s;box-shadow:0 8px 32px rgba(74,222,128,.25)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(74,222,128,.35)}
+.cta.secondary{background:transparent;color:var(--tx);border:1px solid var(--line);box-shadow:none}
+.cta.secondary:hover{border-color:#2e3850;box-shadow:none}
 .hero .sub{margin-top:14px;font-size:.85rem;color:var(--tx3)}
 
 section{padding:88px 0}
@@ -54,12 +57,14 @@ h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:800;letter-spacing:-.01em;ma
 .badge.beta{background:rgba(74,222,128,.12);color:var(--acc);border:1px solid rgba(74,222,128,.3)}
 .badge.soon{background:rgba(154,163,181,.1);color:var(--tx2);border:1px solid var(--line)}
 .badge.dev{background:rgba(34,211,238,.1);color:var(--acc2);border:1px solid rgba(34,211,238,.3)}
+.badge.review{background:rgba(255,255,255,.06);color:var(--tx2);border:1px solid var(--line)}
 .card .icon{font-size:2rem;margin-bottom:18px}
 .card h3{font-size:1.25rem;font-weight:700}
 .card p{color:var(--tx2);font-size:.95rem;margin-top:10px}
 .card ul{margin-top:16px;list-style:none}
 .card li{font-size:.9rem;color:var(--tx2);padding-left:22px;position:relative;margin-top:7px}
 .card li::before{content:"✓";position:absolute;left:0;color:var(--acc);font-weight:700}
+.card-cta{display:inline-block;margin-top:18px;color:var(--acc);font-weight:700;font-size:.92rem}
 
 .flow{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .step{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:24px}
@@ -102,93 +107,88 @@ footer a:hover{color:var(--tx)}
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="tag">AI Health Coach — 30-seat private beta</div>
-  <h1><span class="lead">You already have the data.<br>What was missing is</span><span class="big">someone to read it.</span></h1>
-  <p>Sleep from your watch, body composition from the gym, today's meals.<br>Our AI gathers your scattered health data and sends <b>one line of coaching</b> every morning.</p>
-  <a class="cta" href="https://pf.kakao.com/_mxjLnX/friend" target="_blank" rel="noopener">Apply for the beta on KakaoTalk</a>
-  <div class="sub">Add the channel and send "beta" to join the waitlist</div>
+  <div class="tag">A studio for practical AI and field automation products</div>
+  <h1><span class="lead">JYLAB builds</span><span class="big">practical AI products</span></h1>
+  <p>Self PT, AquaPad and Weekly Happiness are representative examples of how we publish and improve small, useful products for health, education and field operations.</p>
+  <div class="hero-actions">
+    <a class="cta" href="#products">Explore products</a>
+    <a class="cta secondary" href="/happy/">View Weekly Happiness</a>
+  </div>
+  <div class="sub">Public scope and next steps are reviewed product by product.</div>
 </div></header>
 
 <section id="products"><div class="wrap">
   <div class="sec-tag">Products</div>
-  <h2>What we are building</h2>
-  <p class="sec-desc">JYLAB builds everyday tools on one principle: logging is automated, interpretation is AI's job, action is yours.</p>
+  <h2>Product portfolio</h2>
+  <p class="sec-desc">Representative products and operating experiments are grouped in one portfolio. Each card follows the same order: product, status, problem, next action.</p>
   <div class="cards">
     <div class="card">
-      <div class="badge beta">BETA SOON</div>
+      <div class="badge beta">Beta</div>
       <div class="icon">🏃</div>
-      <h3>AI Health Coach</h3>
-      <p>Unified health coaching that connects Garmin, Galaxy Watch, InBody body-composition and meal photos. Starting as a chatbot.</p>
+      <h3>Self PT · AI Health Coach</h3>
+      <p>A personal health-coaching tool that helps users turn workout logs and health data into their next action.</p>
       <ul>
-        <li>Wearable data synced automatically — zero taps</li>
-        <li>Body-composition tracking from a single InBody photo</li>
-        <li>Cross-signal insight: "Weight +2kg, but muscle +1.4kg — you're on track"</li>
-        <li>Personalized morning brief + weekly report</li>
+        <li>Goal-based workout routines and set logging</li>
+        <li>Coaching flow that can review watch, InBody and meal records together</li>
+        <li>KakaoTalk briefings reviewed first with beta members</li>
       </ul>
+      <a class="card-cta" href="#how">View details →</a>
     </div>
     <div class="card">
-      <div class="badge soon">COMING SOON</div>
+      <div class="badge review">Internal review</div>
       <div class="icon">💧</div>
       <h3>AquaPad</h3>
-      <p>A smart coaster that changes your hydration habit. Connects to the AI coach.</p>
+      <p>A field-oriented tool for organizing water-feature work faster.</p>
       <ul>
-        <li>Automatic water-intake logging</li>
-        <li>Integrated with Health Coach data</li>
+        <li>Organizes field records and review items in one place</li>
+        <li>Separates draft information from decisions that need human review</li>
       </ul>
-    </div>
-    <div class="card">
-      <div class="badge dev">IN DEVELOPMENT</div>
-      <div class="icon">🛰️</div>
-      <h3>Soccer GPS Tracker</h3>
-      <p>A wearable GPS for amateur footballers. When the match ends, your data arrives.</p>
-      <ul>
-        <li>Distance covered, sprints and activity heatmap</li>
-        <li>Built for club-level performance tracking</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="badge soon">LAUNCHING SOON</div>
-      <div class="icon">📱</div>
-      <h3>Galaxy App Organizer</h3>
-      <p>An Android tool that tidies up your apps without replacing your launcher — One UI stays exactly as it is.</p>
-      <ul>
-        <li>Find the apps you forgot you ever installed</li>
-        <li>Folder suggestions, storage and notification insights</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="badge dev">IN DEVELOPMENT</div>
-      <div class="icon">🦝</div>
-      <h3>Tori, the AI Tutor</h3>
-      <p>An AI study companion for kids that moves at their pace — from early elementary to high school. It doesn't just hand out answers; it teaches kids to fact-check what AI says.</p>
-      <ul>
-        <li>Grade-by-grade curriculum, elementary through high school</li>
-        <li>"Is that really true?" — detective games that train AI verification</li>
-        <li>Conversational lessons that lead with questions, not answers</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="badge dev">IN DEVELOPMENT</div>
-      <div class="icon">🎙️</div>
-      <h3>Field Voice Assistant (Field-OS)</h3>
-      <p>One phone call turns into a daily work log for construction sites. Refined every day on real job sites.</p>
-      <ul>
-        <li>Call → site matching → auto-drafted daily reports</li>
-        <li>Extra-work tagging and price cross-checks to prevent missed billing</li>
-        <li>Humans approve — AI only drafts</li>
-      </ul>
+      <a class="card-cta" href="#about">Review before inquiry →</a>
     </div>
     <a class="card" href="/happy/" style="display:block">
-      <div class="badge beta">LIVE</div>
+      <div class="badge beta">Operating</div>
       <div class="icon">🌤️</div>
-      <h3>Weekly Happiness Check-in</h3>
-      <p>15 questions, 5 minutes — a Korean-tuned check-in that tells you your weekly type.</p>
+      <h3>Weekly Happiness</h3>
+      <p>A static web check-in for reviewing your week and seeing a result.</p>
       <ul>
-        <li>15 happiness types + shareable result card</li>
-        <li>A weekly loop that connects to the AI Health Coach</li>
+        <li>Direct entry to the static /happy/ page</li>
+        <li>Runs in the browser without implying a separate app launch</li>
       </ul>
-      <p style="margin-top:14px;color:var(--acc);font-weight:700;font-size:.92rem">Try it now →</p>
+      <span class="card-cta">View Weekly Happiness →</span>
     </a>
+    <div class="card">
+      <div class="badge beta">Beta</div>
+      <div class="icon">🫀</div>
+      <h3>AI Health Coach (Beta)</h3>
+      <p>A beta product that helps users interpret scattered health data and choose what to do today.</p>
+      <ul>
+        <li>Reviews sleep, activity, body-composition and meal records together</li>
+        <li>For lifestyle coaching, not diagnosis or treatment</li>
+      </ul>
+      <a class="card-cta" href="#how">View beta →</a>
+    </div>
+    <div class="card">
+      <div class="badge review">Internal review</div>
+      <div class="icon">📚</div>
+      <h3>Tori, the AI Tutor</h3>
+      <p>An education tool that asks at the learner's pace and trains students to verify what AI says.</p>
+      <ul>
+        <li>Conversational learning adjusted to grade and level</li>
+        <li>Focuses on checking and questioning, not just answers</li>
+      </ul>
+      <a class="card-cta" href="#about">View details →</a>
+    </div>
+    <div class="card">
+      <div class="badge review">Internal review</div>
+      <div class="icon">🎙️</div>
+      <h3>Field Voice Assistant (Field-OS)</h3>
+      <p>A field-automation tool that turns calls and site notes into draft work logs.</p>
+      <ul>
+        <li>Call → site matching → auto-drafted daily reports</li>
+        <li>Humans approve — AI only drafts</li>
+      </ul>
+      <a class="card-cta" href="#about">View details →</a>
+    </div>
   </div>
 </div></section>
 
@@ -224,7 +224,7 @@ footer a:hover{color:var(--tx)}
     </div>
     <div>
       <p><b style="color:var(--tx)">Principles</b><br>Automated logging, data-driven interpretation, one-line conclusions. Health data is treated as sensitive information with data-minimization and purpose-limitation principles.</p>
-      <p><b style="color:var(--tx)">Contact</b><br>Partnership & inquiries: <a href="mailto:jaeyoon1725@gmail.com" style="color:var(--acc)">jaeyoon1725@gmail.com</a></p>
+      <p><b style="color:var(--tx)">Contact</b><br>Partnership &amp; inquiries: <a href="mailto:jaeyoon1725@gmail.com" style="color:var(--acc)">jaeyoon1725@gmail.com</a></p>
     </div>
   </div>
 </div></section>

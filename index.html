@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JYLAB — AI가 일하는 제품 스튜디오</title>
-<meta name="description" content="제이와이랩(JYLAB)은 AI와 자동화로 일상의 문제를 푸는 1인 제품 스튜디오입니다. 첫 제품: 가민·갤럭시워치·인바디·식단을 하나로 묶는 AI 헬스코치.">
+<meta name="description" content="제이와이랩(JYLAB)은 셀프PT, AquaPad, 주간행복 등 실사용 AI 제품과 현장 자동화 도구를 만드는 제품 스튜디오입니다.">
 <meta property="og:title" content="JYLAB — AI가 일하는 제품 스튜디오">
-<meta property="og:description" content="흩어진 건강 데이터를 매일 아침 한 줄의 코칭으로. AI 헬스코치 베타 준비 중.">
+<meta property="og:description" content="셀프PT, AquaPad, 주간행복을 비롯해 건강, 교육, 현장 운영을 줄이는 실사용 AI 제품을 만듭니다.">
 <meta property="og:type" content="website">
 <link rel="alternate" hreflang="en" href="https://jylab.kr/en.html">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -39,8 +39,11 @@ nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.82);backdrop-filt
 .hero h1 .big{display:block;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{margin:24px auto 0;max-width:560px;color:var(--tx2);font-size:1.08rem}
-.hero .cta{display:inline-block;margin-top:40px;background:var(--grad);color:#06210f;font-weight:700;padding:15px 36px;border-radius:12px;font-size:1rem;transition:.2s;box-shadow:0 8px 32px rgba(74,222,128,.25)}
-.hero .cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(74,222,128,.35)}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:40px}
+.cta{display:inline-block;background:var(--grad);color:#06210f;font-weight:700;padding:15px 28px;border-radius:12px;font-size:1rem;transition:.2s;box-shadow:0 8px 32px rgba(74,222,128,.25)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(74,222,128,.35)}
+.cta.secondary{background:transparent;color:var(--tx);border:1px solid var(--line);box-shadow:none}
+.cta.secondary:hover{border-color:#2e3850;box-shadow:none}
 .hero .sub{margin-top:14px;font-size:.85rem;color:var(--tx3)}
 
 section{padding:88px 0}
@@ -55,12 +58,14 @@ h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:800;letter-spacing:-.01em;ma
 .badge.beta{background:rgba(74,222,128,.12);color:var(--acc);border:1px solid rgba(74,222,128,.3)}
 .badge.soon{background:rgba(154,163,181,.1);color:var(--tx2);border:1px solid var(--line)}
 .badge.dev{background:rgba(34,211,238,.1);color:var(--acc2);border:1px solid rgba(34,211,238,.3)}
+.badge.review{background:rgba(255,255,255,.06);color:var(--tx2);border:1px solid var(--line)}
 .card .icon{font-size:2rem;margin-bottom:18px}
 .card h3{font-size:1.25rem;font-weight:700}
 .card p{color:var(--tx2);font-size:.95rem;margin-top:10px}
 .card ul{margin-top:16px;list-style:none}
 .card li{font-size:.9rem;color:var(--tx2);padding-left:22px;position:relative;margin-top:7px}
 .card li::before{content:"✓";position:absolute;left:0;color:var(--acc);font-weight:700}
+.card-cta{display:inline-block;margin-top:18px;color:var(--acc);font-weight:700;font-size:.92rem}
 
 .flow{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .step{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:24px}
@@ -103,94 +108,88 @@ footer a:hover{color:var(--tx)}
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="tag">AI 헬스코치 — 30명 비공개 베타 모집</div>
-  <h1><span class="lead">데이터는 이미 충분합니다. 없었던 건</span><span class="big">해석해주는 사람.</span></h1>
-  <p>워치가 잰 수면, 헬스장에서 잰 인바디, 오늘 먹은 한 끼.<br>흩어진 건강 데이터를 AI가 모아 매일 아침 <b>한 줄의 코칭</b>으로 보내드립니다.</p>
-  <a class="cta" href="https://pf.kakao.com/_mxjLnX/friend" target="_blank" rel="noopener">AI 헬스코치 베타 신청하기</a>
-  <div class="sub">카카오톡 채널 추가 후 "베타 신청"이라고 보내주세요</div>
+  <div class="tag">AI 제품과 현장 자동화 제품을 만드는 스튜디오</div>
+  <h1><span class="lead">JYLAB은</span><span class="big">실사용 AI 제품을 만듭니다</span></h1>
+  <p>셀프PT, AquaPad, 주간행복을 비롯해 건강, 교육, 현장 운영을 줄이는 제품을 정적 웹으로 빠르게 공개하고 개선합니다.</p>
+  <div class="hero-actions">
+    <a class="cta" href="#products">제품 둘러보기</a>
+    <a class="cta secondary" href="/happy/">주간행복 보기</a>
+  </div>
+  <div class="sub">제품별 공개 범위와 다음 단계는 검토 후 안내합니다.</div>
 </div></header>
 
 <section id="products"><div class="wrap">
   <div class="sec-tag">Products</div>
-  <h2>만들고 있는 것</h2>
-  <p class="sec-desc">JYLAB은 "기록은 자동, 해석은 AI, 행동은 당신"이라는 원칙으로 일상의 도구를 만듭니다.</p>
+  <h2>제품 포트폴리오</h2>
+  <p class="sec-desc">대표 제품과 운영·실험 제품을 한곳에 모았습니다. 각 카드는 제품명, 상태, 해결 문제, 다음 행동 순서로 읽히도록 정리했습니다.</p>
   <div class="cards">
     <div class="card">
-      <div class="badge beta">BETA 모집</div>
+      <div class="badge beta">베타</div>
       <div class="icon">🏃</div>
-      <h3>AI 헬스코치</h3>
-      <p>가민·갤럭시워치·인바디·식단·운동을 하나로 묶는 통합 건강 코칭. 무료 운동 앱으로 시작해 카카오톡 코칭으로 이어집니다.</p>
+      <h3>셀프PT · AI 헬스코치</h3>
+      <p>운동 기록과 건강 데이터를 한곳에 모아, 다음 행동을 더 쉽게 정하는 개인 건강 코칭 도구입니다.</p>
       <ul>
-        <li>워치 데이터 자동 수집 — 손가락 0번</li>
-        <li>인바디 사진 한 장으로 체성분 추적</li>
-        <li>"체중 +2kg, 근육 +1.4kg — 잘 가고 있어요" 식의 교차 해석</li>
-        <li><b>목표별 운동 루틴 처방 + 세트 기록</b> — "넓은 어깨" "11자 복근"처럼 결과로 시작 (무료)</li>
-        <li>매일 아침 맞춤 브리핑 + 주간 리포트</li>
+        <li>목표별 운동 루틴과 세트 기록</li>
+        <li>워치·인바디·식단 기록을 함께 보는 코칭 흐름</li>
+        <li>베타 멤버부터 순차 검토하는 카카오톡 브리핑</li>
       </ul>
+      <a class="card-cta" href="#app">자세히 보기 →</a>
     </div>
     <div class="card">
-      <div class="badge soon">COMING SOON</div>
+      <div class="badge review">내부 검토</div>
       <div class="icon">💧</div>
       <h3>AquaPad</h3>
-      <p>책상 위의 수분 습관을 바꾸는 스마트 코스터. AI 코치와 연동됩니다.</p>
+      <p>수경시설 업무를 더 빠르게 정리하는 현장형 도구입니다.</p>
       <ul>
-        <li>음수량 자동 기록</li>
-        <li>헬스코치 데이터와 통합</li>
+        <li>현장 기록과 검토 대상을 한곳에 정리</li>
+        <li>확정 전 정보와 사람 검토가 필요한 결정을 분리</li>
       </ul>
-    </div>
-    <div class="card">
-      <div class="badge dev">개발 중</div>
-      <div class="icon">🛰️</div>
-      <h3>축구 GPS 트래커</h3>
-      <p>아마추어 축구를 위한 웨어러블 GPS. 경기가 끝나면 내 데이터가 도착합니다.</p>
-      <ul>
-        <li>뛴 거리·스프린트·활동 히트맵</li>
-        <li>동호회 단위 퍼포먼스 관리를 목표로 개발 중</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="badge soon">곧 출시</div>
-      <div class="icon">📱</div>
-      <h3>갤럭시 앱 정리</h3>
-      <p>런처 교체 없이 One UI 그대로 — 쌓여만 가는 앱을 정리해주는 안드로이드 도구.</p>
-      <ul>
-        <li>"언제 깔았지?" 싶은 미사용 앱 찾기</li>
-        <li>폴더 정리 추천 · 저장공간 · 알림 범인 찾기</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="badge dev">개발 중</div>
-      <div class="icon">🦝</div>
-      <h3>AI 선생님 토리</h3>
-      <p>아이 속도에 맞추는 초등~고등 AI 공부 친구. 정답만 불러주지 않고 "AI 말이 진짜인지 확인하는 법"부터 가르칩니다.</p>
-      <ul>
-        <li>학년별 커리큘럼 — 초등 저학년부터 고등까지</li>
-        <li>탐정 놀이로 배우는 AI 검증 훈련 "진짜야? 확인하기"</li>
-        <li>정답 대신 질문으로 이끄는 대화형 수업</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="badge dev">개발 중</div>
-      <div class="icon">🎙️</div>
-      <h3>현장 음성 비서 (Field-OS)</h3>
-      <p>전화 한 통이면 작업일보와 현장 기록이 정리되는 건설 현장 음성 비서. 실제 시공 현장에서 매일 쓰며 다듬는 중입니다.</p>
-      <ul>
-        <li>통화 내용 → 현장 매칭 → 작업일보 초안 자동 기입</li>
-        <li>추가 공사 태깅 · 단가 대조로 놓치는 청구 방지</li>
-        <li>승인은 사람이 — AI는 초안까지</li>
-      </ul>
+      <a class="card-cta" href="#about">문의 전 검토 →</a>
     </div>
     <a class="card" href="/happy/" style="display:block">
-      <div class="badge beta">LIVE</div>
+      <div class="badge beta">운영 중</div>
       <div class="icon">🌤️</div>
-      <h3>주간 행복 체크인</h3>
-      <p>15문항 5분 — 이번 주 나는 무슨 유형인지 알려주는 한국형 마음 체크인.</p>
+      <h3>주간행복</h3>
+      <p>한 주의 상태를 짧게 돌아보고 결과를 확인하는 정적 웹 체크인입니다.</p>
       <ul>
-        <li>15가지 행복 유형 + 공유 카드</li>
-        <li>매주 돌아오는 체크인 루프 — AI 헬스코치와 연결</li>
+        <li>/happy/ 하위 정적 페이지로 바로 진입</li>
+        <li>가입이나 별도 앱 설치 없이 웹에서 확인</li>
       </ul>
-      <p style="margin-top:14px;color:var(--acc);font-weight:700;font-size:.92rem">지금 해보기 →</p>
+      <span class="card-cta">주간행복 보기 →</span>
     </a>
+    <div class="card">
+      <div class="badge beta">베타</div>
+      <div class="icon">🫀</div>
+      <h3>AI헬스코치(베타)</h3>
+      <p>흩어진 건강 데이터를 해석해 사용자가 오늘 할 일을 더 쉽게 고르도록 돕는 베타 제품입니다.</p>
+      <ul>
+        <li>수면·운동·체성분·식단 데이터를 함께 검토</li>
+        <li>진단·치료가 아닌 생활 코칭 목적</li>
+      </ul>
+      <a class="card-cta" href="#beta">베타 보기 →</a>
+    </div>
+    <div class="card">
+      <div class="badge review">내부 검토</div>
+      <div class="icon">📚</div>
+      <h3>AI 선생님 토리</h3>
+      <p>아이 속도에 맞춰 질문하고, AI가 말한 내용을 스스로 확인하는 습관까지 다루는 교육 도구입니다.</p>
+      <ul>
+        <li>학년과 수준에 맞춘 대화형 학습</li>
+        <li>정답보다 확인 과정과 질문 훈련에 집중</li>
+      </ul>
+      <a class="card-cta" href="#about">자세히 보기 →</a>
+    </div>
+    <div class="card">
+      <div class="badge review">내부 검토</div>
+      <div class="icon">🎙️</div>
+      <h3>현장 음성 비서 (Field-OS)</h3>
+      <p>전화와 현장 기록을 작업일보 초안으로 정리해, 현장 운영의 누락을 줄이는 자동화 도구입니다.</p>
+      <ul>
+        <li>통화 내용 → 현장 매칭 → 작업일보 초안 자동 기입</li>
+        <li>승인은 사람이 — AI는 초안까지</li>
+      </ul>
+      <a class="card-cta" href="#about">자세히 보기 →</a>
+    </div>
   </div>
 </div></section>
 
