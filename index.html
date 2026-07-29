@@ -1,338 +1,278 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JYLAB — AI가 일하는 제품 스튜디오</title>
-<meta name="description" content="제이와이랩(JYLAB)은 헬스케어, 하드웨어, 에듀케이션, 현장 자동화 네 개 사업부에서 실사용 AI 제품을 만드는 제품 스튜디오입니다. 셀프PT, AquaPad, AI 선생님 토리, Field-OS.">
-<meta property="og:title" content="JYLAB — AI가 일하는 제품 스튜디오">
-<meta property="og:description" content="헬스케어, 하드웨어, 에듀케이션, 현장 자동화 — 네 개 사업부와 실험실에서 직접 쓰는 AI 제품을 만듭니다.">
-<meta property="og:type" content="website">
-<link rel="alternate" hreflang="en" href="https://jylab.kr/en.html">
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<style>
-:root{
-  --bg:#0b0d12; --bg2:#11141c; --card:#161a24; --line:#232938;
-  --tx:#e8ebf2; --tx2:#9aa3b5; --tx3:#5d6679;
-  --acc:#4ade80; --acc2:#22d3ee; --grad:linear-gradient(135deg,#4ade80 0%,#22d3ee 100%);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--tx);font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;word-break:keep-all}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JYLAB — 일상에 닿는 기술을 만듭니다</title>
+  <meta name="description" content="JYLAB은 헬스케어, 웰니스 하드웨어, 생활 유틸리티, AI 교육과 스포츠 기술을 직접 만들고 검증하는 제품 스튜디오입니다.">
+  <meta property="og:title" content="JYLAB — 일상에 닿는 기술을 만듭니다">
+  <meta property="og:description" content="생각에서 멈추지 않고, 쓰이는 제품까지. JYLAB의 여섯 가지 제품을 만나보세요.">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://jylab.kr/en.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:#0a0911; --surface:#12101d; --surface-2:#191629; --line:#2a2540;
+      --text:#f7f5ff; --muted:#b8b2ca; --subtle:#817a96;
+      --primary:#9b7cff; --secondary:#6f72ff; --accent:#f06daf;
+      --green:#65d69b; --amber:#f2c66d; --blue:#6fbdf2;
+      --radius:24px; --shadow:0 24px 80px rgba(0,0,0,.34);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; overflow-x:hidden; background:var(--bg); color:var(--text); font-family:"Noto Sans KR",sans-serif; line-height:1.65; }
+    body::before { content:""; position:fixed; inset:0; z-index:-2; background:
+      radial-gradient(circle at 14% 2%,rgba(155,124,255,.17),transparent 28rem),
+      radial-gradient(circle at 88% 18%,rgba(240,109,175,.11),transparent 25rem); }
+    a { color:inherit; text-decoration:none; }
+    button,a { -webkit-tap-highlight-color:transparent; }
+    :focus-visible { outline:3px solid var(--primary); outline-offset:4px; border-radius:8px; }
+    .skip { position:absolute; top:-80px; left:16px; z-index:100; padding:12px 18px; background:var(--text); color:var(--bg); }
+    .skip:focus { top:16px; }
+    .wrap { width:min(1180px,calc(100% - 40px)); margin-inline:auto; }
+    .eyebrow { margin:0 0 12px; color:#c9baff; font:700 .78rem/1.2 Figtree,sans-serif; letter-spacing:.16em; text-transform:uppercase; }
+    h1,h2,h3 { margin:0; font-family:Figtree,"Noto Sans KR",sans-serif; letter-spacing:-.035em; line-height:1.14; }
+    h2 { font-size:clamp(2rem,4.4vw,3.5rem); }
+    p { margin:0; }
+    .muted { color:var(--muted); }
+    .icon { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 
-nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-size:1.25rem;font-weight:800;letter-spacing:.02em}
-.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.nav-links{display:flex;gap:28px;font-size:.92rem;color:var(--tx2)}
-.nav-links a:hover{color:var(--tx)}
+    .site-header { position:sticky; top:0; z-index:50; border-bottom:1px solid rgba(255,255,255,.07); background:rgba(10,9,17,.78); backdrop-filter:blur(20px); }
+    .nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+    .brand { display:flex; align-items:center; gap:11px; font:700 1.05rem Figtree,sans-serif; letter-spacing:.09em; }
+    .brand-mark { display:grid; place-items:center; width:34px; aspect-ratio:1; border-radius:10px; color:white; background:linear-gradient(135deg,var(--primary),var(--accent)); box-shadow:0 8px 25px rgba(155,124,255,.35); }
+    .nav-links { display:flex; align-items:center; gap:28px; color:var(--muted); font-size:.9rem; }
+    .nav-links a { cursor:pointer; transition:color .2s ease; }
+    .nav-links a:hover { color:var(--text); }
+    .nav-cta { padding:10px 16px; border:1px solid var(--line); border-radius:999px; color:var(--text)!important; background:rgba(255,255,255,.04); }
+    .menu-button { display:none; width:44px; height:44px; border:1px solid var(--line); border-radius:12px; color:var(--text); background:var(--surface); cursor:pointer; }
 
-.hero{padding:110px 0 90px;text-align:center;background:
-  radial-gradient(ellipse 60% 50% at 50% -10%,rgba(74,222,128,.14),transparent),
-  radial-gradient(ellipse 50% 40% at 80% 10%,rgba(34,211,238,.10),transparent)}
-.hero .tag{display:inline-block;font-size:.85rem;color:var(--acc);border:1px solid rgba(74,222,128,.35);border-radius:99px;padding:6px 16px;margin-bottom:28px;background:rgba(74,222,128,.06)}
-.hero h1{font-size:clamp(2.2rem,5.4vw,3.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.25}
-.hero h1 .lead{color:var(--tx2);font-size:clamp(1.3rem,3vw,1.9rem);font-weight:700;display:block;margin-bottom:14px}
-.hero h1 .big{display:block;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{margin:24px auto 0;max-width:560px;color:var(--tx2);font-size:1.08rem}
-.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:40px}
-.cta{display:inline-block;background:var(--grad);color:#06210f;font-weight:700;padding:15px 28px;border-radius:12px;font-size:1rem;transition:.2s;box-shadow:0 8px 32px rgba(74,222,128,.25)}
-.cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(74,222,128,.35)}
-.cta.secondary{background:transparent;color:var(--tx);border:1px solid var(--line);box-shadow:none}
-.cta.secondary:hover{border-color:#2e3850;box-shadow:none}
-.hero .sub{margin-top:14px;font-size:.85rem;color:var(--tx3)}
+    .hero { min-height:690px; display:grid; align-items:center; padding:110px 0 84px; position:relative; }
+    .hero-grid { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr); align-items:center; gap:70px; }
+    .hero h1 { max-width:770px; font-size:clamp(3.25rem,7.8vw,6.9rem); }
+    .hero h1 span { color:transparent; background:linear-gradient(100deg,#fff 5%,#d9ccff 43%,#f28abb 95%); background-clip:text; -webkit-background-clip:text; }
+    .hero-copy { max-width:620px; margin-top:28px; color:var(--muted); font-size:clamp(1.02rem,1.8vw,1.2rem); }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:36px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:50px; padding:0 22px; border-radius:14px; cursor:pointer; font-weight:700; transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease; }
+    .button.primary { color:white; background:linear-gradient(135deg,#8566f2,#c45698); box-shadow:0 14px 35px rgba(139,96,233,.28); }
+    .button.secondary { border:1px solid var(--line); background:rgba(255,255,255,.035); }
+    .button:hover { transform:translateY(-2px); }
+    .button.secondary:hover { border-color:#6e638d; }
+    .orbit { position:relative; min-height:430px; display:grid; place-items:center; }
+    .orbit::before,.orbit::after { content:""; position:absolute; border:1px solid rgba(155,124,255,.18); border-radius:50%; }
+    .orbit::before { width:390px; height:390px; }
+    .orbit::after { width:270px; height:270px; }
+    .core { z-index:1; display:grid; place-items:center; width:156px; aspect-ratio:1; border:1px solid rgba(255,255,255,.18); border-radius:42px; background:linear-gradient(145deg,rgba(155,124,255,.28),rgba(240,109,175,.12)); box-shadow:var(--shadow),inset 0 1px rgba(255,255,255,.2); transform:rotate(-8deg); }
+    .core strong { font:700 1.4rem Figtree,sans-serif; letter-spacing:.1em; transform:rotate(8deg); }
+    .satellite { position:absolute; z-index:2; display:flex; align-items:center; gap:9px; padding:11px 14px; border:1px solid var(--line); border-radius:14px; background:rgba(18,16,29,.88); color:var(--muted); font-size:.78rem; box-shadow:0 15px 40px rgba(0,0,0,.25); }
+    .satellite .icon { width:18px; height:18px; color:#c4b5ff; }
+    .s1 { top:44px; left:8%; } .s2 { top:25%; right:0; } .s3 { bottom:24%; left:0; } .s4 { right:11%; bottom:38px; }
 
-section{padding:88px 0}
-.sec-tag{font-size:.85rem;font-weight:700;color:var(--acc);letter-spacing:.08em;text-transform:uppercase}
-h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:800;letter-spacing:-.01em;margin-top:10px}
-.sec-desc{color:var(--tx2);margin-top:14px;max-width:620px}
-.division{border-top:1px solid var(--line)}
-.division .status{display:inline-block;margin-top:18px;font-size:.82rem;font-weight:700;color:var(--acc2);border:1px solid rgba(34,211,238,.3);border-radius:99px;padding:4px 14px;background:rgba(34,211,238,.06)}
+    section { padding:110px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:40px; margin-bottom:48px; }
+    .section-head .intro { max-width:470px; color:var(--muted); }
+    .product-grid { display:grid; grid-template-columns:repeat(12,1fr); gap:18px; }
+    .product-card { min-height:340px; grid-column:span 4; display:flex; flex-direction:column; padding:28px; overflow:hidden; position:relative; border:1px solid var(--line); border-radius:var(--radius); background:linear-gradient(145deg,rgba(28,24,44,.96),rgba(16,14,25,.96)); transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
+    .product-card.featured { grid-column:span 8; }
+    .product-card:hover { transform:translateY(-4px); border-color:#5a4e7c; box-shadow:var(--shadow); }
+    .product-card::after { content:""; position:absolute; right:-70px; bottom:-90px; width:210px; aspect-ratio:1; border-radius:50%; background:var(--glow,rgba(155,124,255,.14)); filter:blur(8px); }
+    .card-top { z-index:1; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .icon-box { display:grid; place-items:center; width:46px; height:46px; border:1px solid rgba(255,255,255,.12); border-radius:14px; color:#d9ceff; background:rgba(255,255,255,.055); }
+    .status { padding:6px 10px; border:1px solid currentColor; border-radius:999px; color:var(--blue); font-size:.72rem; font-weight:700; }
+    .status.prototype { color:var(--amber); } .status.live { color:var(--green); }
+    .product-card h3 { z-index:1; margin-top:auto; font-size:clamp(1.55rem,2.5vw,2.15rem); }
+    .product-card p { z-index:1; max-width:520px; margin-top:12px; color:var(--muted); font-size:.95rem; }
+    .card-link { z-index:1; display:inline-flex; align-items:center; gap:7px; margin-top:22px; color:#cabdff; font-size:.88rem; font-weight:700; }
 
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:44px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px;position:relative;overflow:hidden;transition:.2s}
-.card:hover{border-color:#2e3850;transform:translateY(-3px)}
-.card .badge{position:absolute;top:24px;right:24px;font-size:.74rem;font-weight:700;padding:4px 12px;border-radius:99px}
-.badge.beta{background:rgba(74,222,128,.12);color:var(--acc);border:1px solid rgba(74,222,128,.3)}
-.badge.soon{background:rgba(154,163,181,.1);color:var(--tx2);border:1px solid var(--line)}
-.badge.dev{background:rgba(34,211,238,.1);color:var(--acc2);border:1px solid rgba(34,211,238,.3)}
-.badge.review{background:rgba(255,255,255,.06);color:var(--tx2);border:1px solid var(--line)}
-.card .icon{font-size:2rem;margin-bottom:18px}
-.card h3{font-size:1.25rem;font-weight:700}
-.card p{color:var(--tx2);font-size:.95rem;margin-top:10px}
-.card ul{margin-top:16px;list-style:none}
-.card li{font-size:.9rem;color:var(--tx2);padding-left:22px;position:relative;margin-top:7px}
-.card li::before{content:"✓";position:absolute;left:0;color:var(--acc);font-weight:700}
-.card-cta{display:inline-block;margin-top:18px;color:var(--acc);font-weight:700;font-size:.92rem}
+    .principles { border-block:1px solid var(--line); background:rgba(18,16,29,.58); }
+    .principle-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:90px; align-items:start; }
+    .principle-list { display:grid; gap:14px; }
+    .principle { display:grid; grid-template-columns:48px 1fr; gap:16px; padding:22px; border:1px solid var(--line); border-radius:18px; background:rgba(255,255,255,.025); }
+    .principle .number { color:#baabef; font:700 .82rem Figtree,sans-serif; letter-spacing:.08em; }
+    .principle h3 { font-size:1.05rem; letter-spacing:-.01em; }
+    .principle p { margin-top:5px; color:var(--muted); font-size:.88rem; }
+    .human-note { margin-top:24px; padding:18px 20px; border-left:3px solid var(--accent); background:rgba(240,109,175,.06); color:var(--muted); font-size:.9rem; }
 
-.flow{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.step{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:24px}
-.step .n{font-size:.8rem;font-weight:800;color:var(--acc2)}
-.step h4{margin-top:8px;font-size:1.02rem}
-.step p{font-size:.88rem;color:var(--tx2);margin-top:6px}
+    .contact-card { display:grid; grid-template-columns:1fr auto; align-items:center; gap:32px; padding:clamp(32px,6vw,64px); border:1px solid #4d426e; border-radius:32px; background:
+      radial-gradient(circle at 90% 0,rgba(240,109,175,.16),transparent 35%),
+      linear-gradient(135deg,#1c1730,#12101e); box-shadow:var(--shadow); }
+    .contact-card h2 { max-width:700px; font-size:clamp(2rem,5vw,4rem); }
+    .contact-card p { max-width:580px; margin-top:16px; color:var(--muted); }
+    footer { padding:36px 0 52px; border-top:1px solid var(--line); color:var(--subtle); font-size:.82rem; }
+    .footer-inner { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+    .footer-links { display:flex; gap:18px; }
 
-.about{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:36px}
-.about-grid p{color:var(--tx2);font-size:.97rem}
-.about-grid p+p{margin-top:14px}
-@media(max-width:760px){.about-grid{grid-template-columns:1fr}}
-
-footer{padding:48px 0 64px;border-top:1px solid var(--line);font-size:.85rem;color:var(--tx3)}
-.foot-in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-footer a{color:var(--tx2)}
-footer a:hover{color:var(--tx)}
-@media(max-width:768px){.nav-links{gap:14px;font-size:.85rem}}
-@media(max-width:600px){
-  .nav-in{height:auto;flex-direction:column;align-items:flex-start;gap:10px;padding-top:14px;padding-bottom:14px}
-  .nav-links{flex-direction:column;gap:8px;width:100%}
-  .hero{padding:60px 0 50px}
-  figure{max-width:100%}
-  figure img{max-width:100%;width:100%!important;height:auto}
-  .foot-in{flex-direction:column}
-}
-</style>
+    .reveal { opacity:1; transform:none; }
+    @media (max-width:900px) {
+      .hero-grid,.principle-grid { grid-template-columns:1fr; gap:50px; }
+      .hero { padding-top:80px; }
+      .orbit { min-height:360px; }
+      .product-card,.product-card.featured { grid-column:span 6; }
+      .contact-card { grid-template-columns:1fr; }
+    }
+    @media (max-width:680px) {
+      .wrap { width:min(100% - 28px,1180px); }
+      .menu-button { display:grid; place-items:center; }
+      .nav-links { display:none; position:absolute; top:72px; left:14px; right:14px; flex-direction:column; align-items:stretch; gap:0; padding:12px; border:1px solid var(--line); border-radius:16px; background:#12101d; box-shadow:var(--shadow); }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:12px; }
+      .hero { min-height:auto; padding:70px 0 60px; }
+      .hero h1 { font-size:clamp(3rem,16vw,4.5rem); }
+      .orbit { min-height:310px; transform:scale(.88); }
+      section { padding:78px 0; }
+      .section-head { align-items:start; flex-direction:column; margin-bottom:32px; }
+      .product-card,.product-card.featured { grid-column:1 / -1; min-height:300px; }
+      .principle { grid-template-columns:36px 1fr; }
+      .contact-card { border-radius:24px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; }
+      .reveal { opacity:1; transform:none; }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip" href="#main">본문으로 바로가기</a>
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/><path d="M7 12h3l1.2-3 2 6 1.2-3H17"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2s7 7.1 7 13a7 7 0 0 1-14 0c0-5.9 7-13 7-13Z"/><path d="M9 16c.5 1.2 1.5 2 3 2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 6h6M11 18h2"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-gps" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H11v18H6.5A2.5 2.5 0 0 0 4 22V4.5ZM20 4.5A2.5 2.5 0 0 0 17.5 2H13v18h4.5A2.5 2.5 0 0 1 20 22V4.5Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  </svg>
 
-<nav><div class="wrap nav-in">
-  <div class="logo"><b>JY</b>LAB</div>
-  <div class="nav-links">
-    <a href="#products">사업부</a>
-    <a href="#news">소식</a>
-    <a href="#beta">베타</a>
-    <a href="#privacy">데이터 원칙</a>
-    <a href="#about">회사</a>
-    <a href="en.html">EN</a>
-  </div>
-</div></nav>
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="주요 메뉴">
+      <a class="brand" href="#top" aria-label="JYLAB 홈"><span class="brand-mark">JY</span>LAB</a>
+      <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-links"><svg class="icon"><use href="#i-menu"/></svg></button>
+      <div class="nav-links" id="nav-links">
+        <a href="#products">제품</a><a href="#principles">만드는 방식</a><a href="#contact">문의</a><a href="en.html">EN</a>
+        <a class="nav-cta" href="/happy/">주간행복 사용하기</a>
+      </div>
+    </nav>
+  </header>
 
-<header class="hero"><div class="wrap">
-  <div class="tag">AI 제품과 현장 자동화를 만드는 스튜디오</div>
-  <h1><span class="lead">JYLAB은</span><span class="big">실사용 AI 제품을 만듭니다</span></h1>
-  <p>헬스케어, 하드웨어, 에듀케이션, 현장 자동화 — 네 개 사업부와 실험실에서 직접 쓰는 제품을 만들고 공개합니다.</p>
-  <div class="hero-actions">
-    <a class="cta" href="#products">사업부 둘러보기</a>
-    <a class="cta secondary" href="#beta">헬스코치 베타 신청</a>
-  </div>
-  <div class="sub">제품별 공개 범위와 다음 단계는 검토 후 안내합니다.</div>
-</div></header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Independent product studio</p>
+          <h1><span>일상에 닿는<br>기술을 만듭니다.</span></h1>
+          <p class="hero-copy">JYLAB은 건강, 배움, 생활과 스포츠의 작은 불편을 직접 쓰이는 제품으로 바꾸는 독립 제품 스튜디오입니다.</p>
+          <div class="actions">
+            <a class="button primary" href="#products">제품 살펴보기 <svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a class="button secondary" href="#principles">만드는 방식</a>
+          </div>
+        </div>
+        <div class="orbit" aria-label="JYLAB 제품 분야: 건강, 물, 모바일, 교육">
+          <div class="core"><strong>JYLAB</strong></div>
+          <div class="satellite s1"><svg class="icon"><use href="#i-heart"/></svg>Health</div>
+          <div class="satellite s2"><svg class="icon"><use href="#i-drop"/></svg>Wellness</div>
+          <div class="satellite s3"><svg class="icon"><use href="#i-gps"/></svg>Sports</div>
+          <div class="satellite s4"><svg class="icon"><use href="#i-book"/></svg>Education</div>
+        </div>
+      </div>
+    </section>
 
-<section id="products"><div class="wrap">
-  <div class="sec-tag">Divisions</div>
-  <h2>사업부</h2>
-  <p class="sec-desc">직접 쓰려고 만든 도구가 충분히 좋아졌을 때 제품이 됩니다. 네 개 사업부와 실험실이 각자의 문제를 풉니다.</p>
-  <div class="cards">
-    <a class="card" href="#health" style="display:block">
-      <div class="badge beta">베타 모집</div>
-      <div class="icon">🫀</div>
-      <h3>헬스케어</h3>
-      <p>셀프PT · AI 헬스코치 — 흩어진 건강 기록을 모아 오늘 할 일을 한 줄로 정리합니다.</p>
-      <span class="card-cta">자세히 보기 →</span>
-    </a>
-    <a class="card" href="#hardware" style="display:block">
-      <div class="badge dev">시제품</div>
-      <div class="icon">💧</div>
-      <h3>하드웨어</h3>
-      <p>AquaPad — 물 섭취를 자동으로 기록하는 스마트 코스터를 만듭니다.</p>
-      <span class="card-cta">자세히 보기 →</span>
-    </a>
-    <a class="card" href="#education" style="display:block">
-      <div class="badge dev">저작 중</div>
-      <div class="icon">📚</div>
-      <h3>에듀케이션</h3>
-      <p>AI 선생님 토리 — 아이 속도에 맞추고, AI 답을 스스로 확인하는 습관을 기릅니다.</p>
-      <span class="card-cta">자세히 보기 →</span>
-    </a>
-    <a class="card" href="#field" style="display:block">
-      <div class="badge review">내부 운영</div>
-      <div class="icon">🎙️</div>
-      <h3>현장 자동화</h3>
-      <p>Field-OS — 전화와 현장 기록을 작업일보 초안으로 바꾸는 음성 비서입니다.</p>
-      <span class="card-cta">자세히 보기 →</span>
-    </a>
-    <a class="card" href="#lab" style="display:block">
-      <div class="badge beta">운영 중</div>
-      <div class="icon">🌤️</div>
-      <h3>실험실</h3>
-      <p>주간행복 외 — 가볍게 만들어 공개하고 반응을 보는 라인입니다.</p>
-      <span class="card-cta">자세히 보기 →</span>
-    </a>
-  </div>
-</div></section>
+    <section id="products">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Products</p><h2>지금 만들고 있는 것들</h2></div>
+          <p class="intro">완성되지 않은 것은 완성됐다고 말하지 않습니다. 현재 확인된 개발 단계를 함께 표시합니다.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card featured reveal" style="--glow:rgba(155,124,255,.22)">
+            <div class="card-top"><span class="icon-box"><svg class="icon"><use href="#i-heart"/></svg></span><span class="status">앱 개발 중</span></div>
+            <h3>AI 헬스코치</h3>
+            <p>운동 기록과 건강 데이터를 모아 오늘의 행동을 더 쉽게 결정하도록 돕는 생활 코칭 앱입니다. 의료 진단이 아닌 일상 건강관리 도구로 개발하고 있습니다.</p>
+            <span class="card-link">Android 프로토타입 개발 <svg class="icon"><use href="#i-arrow"/></svg></span>
+          </article>
+          <article class="product-card reveal" style="--glow:rgba(87,183,242,.18)">
+            <div class="card-top"><span class="icon-box"><svg class="icon"><use href="#i-drop"/></svg></span><span class="status prototype">시제품 단계</span></div>
+            <h3>AquaPad</h3>
+            <p>쓰던 컵 아래에 놓으면 물 섭취를 자동 기록하는 스마트 코스터와 연동 앱입니다.</p>
+            <span class="card-link">앱·BLE 개발 / 기구 제작 필요</span>
+          </article>
+          <article class="product-card reveal" style="--glow:rgba(101,214,155,.15)">
+            <div class="card-top"><span class="icon-box"><svg class="icon"><use href="#i-phone"/></svg></span><span class="status">MVP 개발 중</span></div>
+            <h3>갤럭시 앱정리</h3>
+            <p>복잡한 권한과 저장공간 상태를 이해하기 쉬운 순서로 정리하는 Android 생활 유틸리티입니다.</p>
+            <span class="card-link">Android 구현 검증 중</span>
+          </article>
+          <a class="product-card reveal" href="/happy/" style="--glow:rgba(242,198,109,.17)">
+            <div class="card-top"><span class="icon-box"><svg class="icon"><use href="#i-sun"/></svg></span><span class="status live">웹 운영 중</span></div>
+            <h3>주간행복</h3>
+            <p>가입 없이 한 주의 상태를 짧게 돌아보고 결과를 확인하는 가벼운 웹 체크인입니다.</p>
+            <span class="card-link">바로 사용하기 <svg class="icon"><use href="#i-arrow"/></svg></span>
+          </a>
+          <article class="product-card reveal" style="--glow:rgba(111,114,255,.2)">
+            <div class="card-top"><span class="icon-box"><svg class="icon"><use href="#i-gps"/></svg></span><span class="status prototype">설계 단계</span></div>
+            <h3>축구 GPS</h3>
+            <p>아마추어 선수의 이동 거리와 스프린트를 기록해 경기 뒤 팀 리포트로 보여주는 트래커입니다.</p>
+            <span class="card-link">하드웨어 문서 완료 / 소프트웨어 개발 필요</span>
+          </article>
+          <article class="product-card featured reveal" style="--glow:rgba(240,109,175,.2)">
+            <div class="card-top"><span class="icon-box"><svg class="icon"><use href="#i-book"/></svg></span><span class="status">프로토타입 개발 중</span></div>
+            <h3>AI 선생님 토리</h3>
+            <p>아이가 AI와 대화하면서 좋은 질문과 답을 확인하는 습관을 배우는 AI 교육 제품입니다. 외부 공개 전 보호자 동의와 아동 안전 검수를 거칩니다.</p>
+            <span class="card-link">커리큘럼·웹 프로토타입 구현 <svg class="icon"><use href="#i-arrow"/></svg></span>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section id="health" class="division"><div class="wrap">
-  <div class="sec-tag">Division · Healthcare</div>
-  <h2>헬스케어 — 셀프PT · AI 헬스코치</h2>
-  <p class="sec-desc">운동은 무료 셀프PT 앱으로 기록하고, 갤럭시워치·가민·인바디·식단 사진은 카카오톡 AI 코칭이 함께 읽습니다. 진단·치료가 아닌 생활 코칭 목적입니다.</p>
-  <div class="flow">
-    <div class="step"><div class="n">푸는 문제</div><h4>기록은 많은데 결론이 없다</h4><p>워치, 인바디, 식단 앱에 데이터가 흩어져 있어 정작 오늘 무엇을 해야 할지 정하기 어렵습니다.</p></div>
-    <div class="step"><div class="n">제품</div><h4>무료 운동 앱 + 카톡 코칭</h4><p>10가지 목표별 루틴과 세트 기록은 무료로 시작하고, 데이터를 연결하면 매일 아침 한 줄 코칭으로 이어집니다.</p></div>
-    <div class="step"><div class="n">현재</div><h4>30명 · 4주 비공개 베타</h4><p>베타 멤버를 모집하고 있습니다. 기록 연결, 아침 코칭, 주간 리포트 반응을 같이 봅니다.</p></div>
-  </div>
-  <p style="margin-top:28px"><a class="cta" href="#beta">베타 신청 안내 보기</a> <a class="cta secondary" href="#app" style="margin-left:8px">앱 미리 보기</a></p>
-</div></section>
+    <section class="principles" id="principles">
+      <div class="wrap principle-grid">
+        <div class="reveal">
+          <p class="eyebrow">How we build</p>
+          <h2>작게 만들고,<br>실제로 확인합니다.</h2>
+          <p class="muted" style="margin-top:20px">아이디어보다 작동하는 결과를, 화려한 약속보다 확인 가능한 현재 상태를 우선합니다.</p>
+          <div class="human-note">AquaPad와 축구 GPS의 기구 조립·착용 테스트처럼 물리 세계에서 확인해야 하는 일은 사람이 직접 수행합니다.</div>
+        </div>
+        <div class="principle-list">
+          <article class="principle reveal"><span class="number">01</span><div><h3>문제를 한 문장으로 정의</h3><p>누구의 어떤 불편을 줄이는지 먼저 정합니다.</p></div></article>
+          <article class="principle reveal"><span class="number">02</span><div><h3>쓸 수 있는 최소 제품을 구현</h3><p>문서에서 끝내지 않고 코드와 화면으로 확인합니다.</p></div></article>
+          <article class="principle reveal"><span class="number">03</span><div><h3>증거를 보고 다음 순서를 결정</h3><p>테스트·사용 결과를 바탕으로 한 번에 하나씩 개선합니다.</p></div></article>
+          <article class="principle reveal"><span class="number">04</span><div><h3>공개와 물리 작업은 사람이 승인</h3><p>배포, 사용자 접촉, 구매와 제작은 명확한 승인 뒤에 진행합니다.</p></div></article>
+        </div>
+      </div>
+    </section>
 
-<section id="hardware" class="division"><div class="wrap">
-  <div class="sec-tag">Division · Hardware</div>
-  <h2>하드웨어 — AquaPad</h2>
-  <p class="sec-desc">물 섭취를 자동으로 기록하는 스마트 코스터입니다. 쓰던 컵을 코스터 위에 올려두기만 하면 하루 물 섭취가 앱에 쌓입니다.</p>
-  <div class="flow">
-    <div class="step"><div class="n">푸는 문제</div><h4>물 마시기 기록은 3일을 못 간다</h4><p>물 섭취 앱은 결국 수동 입력이라 금방 끊깁니다. 기록이 끊기면 관리도 끊깁니다.</p></div>
-    <div class="step"><div class="n">접근</div><h4>행동 변화 제로</h4><p>전용 물병도, 버튼도, 입력도 없습니다. 쓰던 컵을 그대로 쓰고 기록은 기기가 합니다.</p></div>
-    <div class="step"><div class="n">현재</div><h4>첫 시제품 제작 단계</h4><p>3D 프린팅 장비를 도입해 첫 시제품을 만들고 있습니다. 제작 과정은 개발노트로 공유할 예정입니다.</p></div>
-  </div>
-  <div class="status">시제품 제작 중 · 출시 일정은 개발노트로 안내</div>
-</div></section>
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-card reveal">
+          <div><p class="eyebrow">Contact</p><h2>함께 풀고 싶은 문제가 있으신가요?</h2><p>제품 협업과 제안은 이메일로 보내주세요. 확인 후 직접 답변드립니다.</p></div>
+          <a class="button primary" href="mailto:jaeyoon1725@gmail.com">이메일 보내기 <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<section id="education" class="division"><div class="wrap">
-  <div class="sec-tag">Division · Education</div>
-  <h2>에듀케이션 — AI 선생님 토리</h2>
-  <p class="sec-desc">아이 속도에 맞춰 질문하고, AI가 말한 내용을 스스로 확인하는 습관까지 다루는 초등 AI 교육입니다.</p>
-  <div class="flow">
-    <div class="step"><div class="n">푸는 문제</div><h4>AI 시대의 공부는 검증력이다</h4><p>답은 AI가 줍니다. 아이에게 필요한 건 그 답이 맞는지 스스로 확인하는 힘입니다.</p></div>
-    <div class="step"><div class="n">접근</div><h4>대화형 학습 + 확인 훈련</h4><p>학년과 수준에 맞춘 대화형 학습으로, 정답보다 확인 과정과 질문 훈련에 집중합니다.</p></div>
-    <div class="step"><div class="n">현재</div><h4>첫 과정 저작 중</h4><p>학년군별 마스터 커리큘럼 설계를 마치고 첫 과정(초3–4) 콘텐츠를 만들고 있습니다.</p></div>
-  </div>
-</div></section>
-
-<section id="field" class="division"><div class="wrap">
-  <div class="sec-tag">Division · Field Automation</div>
-  <h2>현장 자동화 — Field-OS 음성 비서</h2>
-  <p class="sec-desc">전화와 현장 기록을 작업일보 초안으로 정리해 현장 운영의 누락을 줄입니다. AI는 초안까지, 승인은 사람이 합니다.</p>
-  <div class="flow">
-    <div class="step"><div class="n">푸는 문제</div><h4>현장 통화는 기록 없이 사라진다</h4><p>지시와 변경 사항이 전화로 오가고, 작업일보는 늘 밀립니다. 누락은 결국 비용이 됩니다.</p></div>
-    <div class="step"><div class="n">접근</div><h4>통화 → 현장 매칭 → 일보 초안</h4><p>통화 내용을 현장별로 매칭해 작업일보 초안에 자동 기입합니다. 확정 전 정보와 사람 검토가 필요한 결정은 분리합니다.</p></div>
-    <div class="step"><div class="n">현재</div><h4>실제 현장에서 내부 운영</h4><p>실사용 현장에서 운영하며 검증하고 있습니다. 외부 공개 범위는 검토 후 안내합니다.</p></div>
-  </div>
-</div></section>
-
-<section id="lab" class="division"><div class="wrap">
-  <div class="sec-tag">Lab</div>
-  <h2>실험실</h2>
-  <p class="sec-desc">가볍게 만들어 공개하고 반응을 보는 라인입니다. 충분히 좋아지면 사업부로 승격합니다.</p>
-  <div class="cards">
-    <a class="card" href="/happy/" style="display:block">
-      <div class="badge beta">운영 중</div>
-      <div class="icon">🌤️</div>
-      <h3>주간행복</h3>
-      <p>한 주의 상태를 짧게 돌아보고 결과를 확인하는 웹 체크인입니다.</p>
-      <ul>
-        <li>가입이나 앱 설치 없이 웹에서 바로 사용</li>
-        <li>/happy/ 하위 정적 페이지로 진입</li>
-      </ul>
-      <span class="card-cta">주간행복 보기 →</span>
-    </a>
-  </div>
-</div></section>
-
-<section id="news" hidden><div class="wrap">
-  <div class="sec-tag">News</div>
-  <h2>사업부 소식</h2>
-  <p class="sec-desc">각 사업부에서 실제로 일어난 진행 상황을 그대로 올립니다.</p>
-  <style>
-    .news-list{margin-top:36px;display:flex;flex-direction:column;gap:0}
-    .news-item{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:22px 4px;border-top:1px solid var(--line)}
-    .news-item:last-child{border-bottom:1px solid var(--line)}
-    .news-date{font-size:.85rem;color:var(--tx2);padding-top:3px}
-    .news-tag{display:inline-block;font-size:.74rem;font-weight:700;color:var(--acc);border:1px solid rgba(74,222,128,.3);border-radius:99px;padding:2px 10px;margin-bottom:8px}
-    .news-item h4{margin:0 0 6px;font-size:1.05rem}
-    .news-item p{margin:0;color:var(--tx2);font-size:.95rem;line-height:1.65}
-    .news-cta{display:inline-block;margin-top:10px;font-size:.9rem;font-weight:600;color:var(--acc)}
-    @media(max-width:640px){.news-item{grid-template-columns:1fr;gap:6px}}
-  </style>
-  <div class="news-list" id="news-list"></div>
-</div></section>
-<script>
-fetch('data/site.json').then(r=>r.json()).then(d=>{
-  const items=(d.news||[]).slice(0,8);
-  if(!items.length)return;
-  document.getElementById('news-list').innerHTML=items.map(n=>
-    '<div class="news-item"><div class="news-date">'+n.date+'</div><div>'+
-    '<span class="news-tag">'+n.tag+'</span>'+
-    '<h4>'+n.title+'</h4><p>'+n.body+'</p>'+
-    (n.cta?'<a class="news-cta" href="'+n.cta.href+'"'+(n.cta.href.startsWith('http')?' target="_blank" rel="noopener"':'')+'>'+n.cta.label+' →</a>':'')+
-    '</div></div>').join('');
-  document.getElementById('news').hidden=false;
-}).catch(()=>{});
-</script>
-
-<section id="beta"><div class="wrap">
-  <div class="sec-tag">Healthcare · Private Beta</div>
-  <h2>4주 동안 같이 검증할 베타 멤버를 찾습니다</h2>
-  <p class="sec-desc">무료 셀프PT 앱으로 운동 기록을 시작하고, 베타 멤버에게는 워치·인바디·식단 사진을 연결한 카카오톡 AI 코칭을 순차 제공할 예정입니다.</p>
-  <div class="flow">
-    <div class="step"><div class="n">대상</div><h4>운동 기록이 흩어진 분</h4><p>갤럭시워치·가민·인바디·식단 사진 중 2개 이상을 쓰고 있지만, 매일 무엇을 해야 할지 애매한 분. 목표 대회를 준비하는 러너 환영.</p></div>
-    <div class="step"><div class="n">진행</div><h4>30명 · 4주</h4><p>초기 베타는 약 30명 규모로 운영합니다. 기록 연결, 아침 코칭, 주간 리포트 반응을 같이 봅니다.</p></div>
-    <div class="step"><div class="n">제공</div><h4>무료 운동 앱 + 카톡 코칭</h4><p>목표별 루틴과 세트 기록은 무료로 시작합니다. 통합 AI 코칭은 베타 멤버부터 순차 적용하며, 러너에게는 워치 기록 기반 페이스·회복 러닝 코칭 트랙을 준비하고 있습니다.</p></div>
-    <div class="step"><div class="n">신청</div><h4>카카오톡으로 접수</h4><p>채널 추가 후 "베타 신청"이라고 보내주세요. 기기 종류와 운동 목표를 확인한 뒤 안내드립니다.</p></div>
-  </div>
-  <p style="margin-top:28px"><a class="cta" href="https://pf.kakao.com/_mxjLnX/friend" target="_blank" rel="noopener">카카오톡으로 베타 신청하기</a></p>
-</div></section>
-
-<section id="how"><div class="wrap">
-  <div class="sec-tag">Healthcare · How it works</div>
-  <h2>AI 헬스코치, 이렇게 작동합니다</h2>
-  <div class="flow">
-    <div class="step"><div class="n">STEP 1</div><h4>연결</h4><p>가민·갤럭시워치 계정을 한 번 연결하면 운동·수면·심박이 자동으로 모입니다.</p></div>
-    <div class="step"><div class="n">STEP 2</div><h4>사진 두 장</h4><p>밥 먹을 때 한 장, 인바디 잴 때 한 장. 나머지 기록은 전부 자동입니다.</p></div>
-    <div class="step"><div class="n">STEP 3</div><h4>교차 해석</h4><p>체중·근육·수면·식단을 함께 읽습니다. 숫자 하나로 겁주지 않습니다.</p></div>
-    <div class="step"><div class="n">STEP 4</div><h4>아침 한 줄</h4><p>매일 아침 카카오톡으로. "오늘 뭘 하면 되는지"만 정확하게.</p></div>
-  </div>
-</div></section>
-
-<section id="app"><div class="wrap">
-  <div class="sec-tag">Healthcare · App Preview</div>
-  <h2>무료 운동 앱으로 시작하세요</h2>
-  <p class="sec-desc">"넓은 어깨" "11자 복근" "달리기 빨라지기"처럼 <b>10가지 목표</b> 중에서 고르면 입문 루틴과 동작 영상을 받습니다. PT 없이도 혼자, 정확하게. 세트를 기록하면 워치·인바디·식단과 함께 카카오톡 코칭으로 이어집니다.</p>
-  <div style="display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-top:44px">
-    <figure style="margin:0;text-align:center">
-      <img src="assets/app-goals.png" alt="목표 선택 화면 — 넓은 어깨·11자 복근·애플힙·거북목 교정·첫 턱걸이" loading="lazy" style="width:240px;border-radius:26px;border:1px solid var(--line)">
-      <figcaption style="margin-top:14px;color:#9aa3b5;font-size:.9rem">결과로 고르는 목표</figcaption>
-    </figure>
-    <figure style="margin:0;text-align:center">
-      <img src="assets/app-workout.png" alt="운동 루틴·세트 기록 화면 — 동작 영상과 세트별 기록" loading="lazy" style="width:240px;border-radius:26px;border:1px solid var(--line)">
-      <figcaption style="margin-top:14px;color:#9aa3b5;font-size:.9rem">동작 영상 + 세트 기록</figcaption>
-    </figure>
-  </div>
-</div></section>
-
-<section id="privacy"><div class="wrap">
-  <div class="sec-tag">Data &amp; Privacy</div>
-  <h2>데이터를 다루는 원칙</h2>
-  <p class="sec-desc">JYLAB의 모든 제품에 같은 원칙을 적용합니다. 건강 데이터는 민감정보로 취급하며, 어떤 제품도 의료기기가 아니고 진단·치료 목적의 조언을 제공하지 않습니다. 수집한 데이터는 사용자가 요청한 기능 제공 목적으로만 사용합니다.</p>
-  <div class="flow">
-    <div class="step"><div class="n">사용하는 데이터</div><h4>동의한 것만</h4><p>사용자가 직접 연결하거나 업로드한 데이터만 수집합니다. 헬스코치의 가민 연동은 공식 Health API의 사용자 동의 절차를 따릅니다.</p></div>
-    <div class="step"><div class="n">하지 않는 것</div><h4>판매·광고·제3자 제공 없음</h4><p>데이터를 판매하거나 광고에 활용하지 않으며, 제3자에게 제공하지 않습니다. 사용자가 요청한 기능 외 목적으로 사용하지 않습니다.</p></div>
-    <div class="step"><div class="n">사용자 통제</div><h4>언제든 연결 해제·삭제</h4><p>연동은 언제든 해제할 수 있고, 요청 시 데이터를 지체 없이 파기합니다. 자세한 내용은 <a href="privacy.html" style="color:var(--acc)">개인정보처리방침</a>에 있습니다.</p></div>
-  </div>
-</div></section>
-
-<section id="about" class="about"><div class="wrap">
-  <div class="sec-tag">About</div>
-  <h2>제이와이랩</h2>
-  <div class="about-grid">
-    <div>
-      <p>JYLAB은 AI와 자동화로 일상의 문제를 푸는 1인 제품 스튜디오입니다. 직접 쓰려고 만든 도구가 충분히 좋아졌을 때, 제품으로 내놓습니다.</p>
-      <p>헬스케어, 하드웨어, 에듀케이션, 현장 자동화 네 개 사업부와 실험실을 운영합니다. AI 헬스코치도 매일 아침 러닝과 인바디와 식단 사이에서 길을 잃던 한 사람의 기록 자동화에서 시작했습니다.</p>
-    </div>
-    <div>
-      <p><b style="color:var(--tx)">원칙</b><br>기록은 자동으로, 해석은 데이터로, 결론은 한 줄로. 건강 데이터는 민감정보로 취급하며 수집 최소화·목적 제한 원칙을 지킵니다.</p>
-      <p><b style="color:var(--tx)">연락처</b><br>제휴·문의: <a href="mailto:jaeyoon1725@gmail.com" style="color:var(--acc)">jaeyoon1725@gmail.com</a></p>
-    </div>
-  </div>
-</div></section>
-
-<footer><div class="wrap foot-in">
-  <div>
-    © 2026 제이와이랩(JYLAB). All rights reserved.<br>
-    <span style="font-size:.8rem">대표: 심재윤 · 사업자등록번호: 365-53-01159 · 경기도 고양시 일산동구</span>
-  </div>
-  <div><a href="privacy.html">개인정보처리방침</a></div>
-</div></footer>
-
+  <footer>
+    <div class="wrap footer-inner"><span>© 2026 JYLAB. Built in Korea.</span><span class="footer-links"><a href="privacy.html">개인정보처리방침</a><a href="en.html">English</a></span></div>
+  </footer>
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('#nav-links');
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    });
+    navLinks.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', '메뉴 열기');
+      }
+    });
+  </script>
 </body>
 </html>
