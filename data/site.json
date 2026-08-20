@@ -1,33 +1,20 @@
 {
-  "updated": "2026-07-13",
-  "news": [
-    {
-      "date": "2026-07-13",
-      "tag": "AI 헬스코치",
-      "title": "비공개 베타 테스터 모집을 시작합니다",
-      "body": "갤럭시워치·가민·인바디·식단 사진을 하나로 읽는 카카오톡 AI 코칭. 30명 규모 4주 베타로 시작합니다.",
-      "cta": { "label": "카톡으로 베타 신청", "href": "https://pf.kakao.com/_mxjLnX/friend" }
-    },
-    {
-      "date": "2026-07-13",
-      "tag": "셀프PT",
-      "title": "10가지 목표 · 운동 20종 · 입문 영상 코칭 완성",
-      "body": "넓은어깨부터 체력까지 목표별 루틴 처방과 세트 기록, 운동마다 골라 담은 입문 영상까지. 스토어 출시를 준비 중입니다.",
-      "cta": { "label": "베타 멤버로 먼저 쓰기", "href": "#beta" }
-    },
-    {
-      "date": "2026-07-12",
-      "tag": "AI 선생님 토리",
-      "title": "초등 AI 교육 마스터 커리큘럼 설계 완료",
-      "body": "학년군별 단계 설계를 마치고 첫 과정(초3–4) 콘텐츠 저작에 들어갑니다.",
-      "cta": null
-    },
-    {
-      "date": "2026-07-13",
-      "tag": "AquaPad",
-      "title": "시제품 제작 단계 진입",
-      "body": "3D 프린팅 장비 도입을 확정하고 첫 시제품 제작을 시작합니다. 제작 과정은 개발노트로 공유할 예정입니다.",
-      "cta": null
-    }
+  "schemaVersion": 2,
+  "lastVerified": "2026-08-19",
+  "stageValues": ["research", "prototype", "beta", "operating", "retired"],
+  "axes": [
+    {"id":"construction-os","publicGroup":"build","name":"시공 OS","products":["gongsadaejang","cad-estimate","fountain-control","sprinkler-calc"]},
+    {"id":"blog-saas","publicGroup":"grow","name":"블로그 SaaS","products":["blogcraft","blog-scoring"]},
+    {"id":"self-improvement","publicGroup":"evolve","name":"AI 자가개선","products":["auto-rnd"]},
+    {"id":"backoffice-os","publicGroup":"operate","name":"1인 백오피스 OS","products":["my-secretary"]},
+    {"id":"content-commerce","publicGroup":"grow","name":"콘텐츠→커머스→자체상품","products":["aquapad"]},
+    {"id":"public-sales","publicGroup":"operate","name":"공공사업 자동영업","products":["g2b"]},
+    {"id":"meta-automation","publicGroup":"evolve","name":"메타자동화","products":["ai-office"]},
+    {"id":"ip-assets","publicGroup":"protect","name":"IP 자산화","products":[]}
+  ],
+  "products": [
+    {"slug":"ai-health-coach","axis":"content-commerce","name":"AI 헬스코치","oneLiner":"흩어진 운동·생활 기록을 오늘 실행할 한 가지로 바꾸는 웰니스 코칭 제품","stage":"prototype","statusLabel":"MVP 개발 중","lastVerified":"2026-08-19","publicVisibility":true,"humanGates":["외부 배포","건강데이터 처리"],"ipStatus":"candidate"},
+    {"slug":"aquapad","axis":"content-commerce","name":"AquaPad","oneLiner":"쓰던 컵의 무게 변화를 감지해 음수 기록을 자동화하려는 스마트 패드","stage":"prototype","statusLabel":"기술검증","lastVerified":"2026-08-19","publicVisibility":true,"humanGates":["기구 제작","실사용 테스트"],"ipStatus":"candidate"},
+    {"slug":"weekly-happiness","axis":"backoffice-os","name":"주간행복","oneLiner":"한 주의 상태를 짧게 돌아보는 웹 체크인","stage":"operating","statusLabel":"웹 운영 중","lastVerified":"2026-08-19","publicVisibility":true,"ipStatus":"none"}
   ]
 }
